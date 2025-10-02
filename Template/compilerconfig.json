@@ -10,5 +10,13 @@
   {
     "outputFile": "Components/Pages/Home.razor.css",
     "inputFile": "Components/Pages/Home.razor.scss"
+  },
+  {
+    "outputFile": "Components/Shared/StatusBar.razor.css",
+    "inputFile": "Components/Shared/StatusBar.razor.scss"
+  },
+  {
+    "outputFile": "Components/Shared/Button.razor.css",
+    "inputFile": "Components/Shared/Button.razor.scss"
   }
 ]

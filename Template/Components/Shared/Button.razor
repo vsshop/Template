@@ -1,0 +1,38 @@
+﻿<div class="button flex-column-w @Offset @Radius"
+     @onmousedown="OnMouseDown">
+
+    <p class="content flex-row @Font">
+        @ChildContent
+    </p>
+    @foreach (var c in clicks)
+    {
+        <span @key="c.Id" class="click" style="left: @($"{c.X}px"); top: @($"{c.Y}px")"></span>
+    }
+</div>
+
+
+@code {
+    public record Click(Guid Id, double X, double Y);
+
+    [Parameter] public string Font { get; set; } = "fs18";
+    [Parameter] public string Offset { get; set; } = "pd12";
+    [Parameter] public string Radius { get; set; } = "br12";
+
+    [Parameter] public EventCallback OnSelect { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    private readonly List<Click> clicks = new();
+
+    private async void OnMouseDown(MouseEventArgs e)
+    {
+        var click = new Click(Guid.NewGuid(), e.OffsetX, e.OffsetY);
+        clicks.Add(click);
+        StateHasChanged();
+
+        await Task.Delay(600);
+        clicks.Remove(click);
+
+        await OnSelect.InvokeAsync();
+        StateHasChanged();
+    }
+}

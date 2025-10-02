@@ -41,7 +41,7 @@ input {
   border: none;
 
   &:placeholder-shown {
-    color: var(--background-third-color) !important;
+    color: var(--bg3) !important;
   }
 
   &::placeholder {

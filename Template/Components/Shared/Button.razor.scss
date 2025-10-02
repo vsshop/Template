@@ -1,0 +1,37 @@
+.button {
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: 0.2s ease-in;
+    background: var(--bg5);
+    flex: 0 0 auto;
+
+    .content {
+        color: var(--cr1);
+        flex-shrink: 0;
+        pointer-events: none;
+    }
+
+    .click {
+        pointer-events: none;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        animation: circle 0.8s ease;
+        background: color-mix(in oklab, white 20%, transparent);
+    }
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) scale(50);
+    opacity: 0;
+  }
+}
