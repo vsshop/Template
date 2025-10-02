@@ -1,0 +1,65 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+html, body, #app {
+  display: flex;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: var(--bg1);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: none;
+}
+
+span {
+  white-space: nowrap;
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+input:placeholder-shown {
+  color: var(--background-third-color) !important;
+}
+input::placeholder {
+  opacity: 0;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  --bg1: #E0E2E0;
+  --bg2: #CAB69D;
+  --bg3: #9F8551;
+  --bg4: #96A4A5;
+  --bg5: #2D3644;
+  --cr1: #E0E2E0;
+  --cr2: #CAB69D;
+  --cr3: #9F8551;
+  --cr4: #96A4A5;
+  --cr5: #2D3644;
+  --br1: #d7d7d7cd;
+  --br2: #9b9a9acd;
+}
